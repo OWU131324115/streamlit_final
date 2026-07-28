@@ -190,7 +190,7 @@ with btn_col3:
                 topic_text = study_topic if study_topic else "お勉強"
                 prompt = (
                     f"あなたは勉強管理アプリのキャラクターである魚の「{fish_option}」です。"
-                    f"ユーザーは今から「{topic_text}」を勉強します。短め（2文）の応援メッセージを考えてください。"
+                    f"ユーザーは今から「{topic_text}」を勉強します。ぷくぷくから始まる、2文の応援メッセージを考えてください。金魚は女の子で、サバは男の子です。"
                 )
                 try:
                     response = client.models.generate_content(model=MODEL_NAME, contents=prompt)
