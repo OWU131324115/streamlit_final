@@ -59,7 +59,7 @@ api_key = st.text_input("Gemini API Keyを入力してください", type="passw
 if api_key:
     try:
         client = genai.Client(api_key=api_key)
-        MODEL_NAME = "gemini-3.5-flash"
+        MODEL_NAME = "gemini-3.5-flash-lite"
     except Exception as e:
          st.error(f"APIクライアントの初期化に失敗しました: {e}")
          client = None
@@ -199,6 +199,7 @@ with btn_col3:
                     # エラーが起きたら固定メッセージ
                    st.session_state.fish_message = "今日も一緒にがんばろう！"
 
+            st.rerun()
         else:
             # 「完了」が押されたとき（データを保存して終了）
             st.session_state.timer_running = False
